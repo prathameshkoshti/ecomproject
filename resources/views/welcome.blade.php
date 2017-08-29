@@ -1,95 +1,47 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style >
+	body{
+		background-color: #424242 !important;
+	}
+</style>
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+<div class="col-md-6 col-md-offset-3" style="background-color: #F5F5F5">
+<div class="container-fluid">
+	<div class="container col-md-12">
+		<div class="heading">
+			<h2>Heading 1</h2>
+		</div>
+		<hr>
+		<div class="paragraph">
+			<p>
+				Lorem ipsum dolor sit amet, tation putent ius te, est quem quodsi splendide id. Dolorum placerat invidunt ad vis. At vix conceptam omittantur, id nec epicurei postulant. Putant utroque definitiones his ea, mei quaestio gubergren delicatissimi in, eu harum postea sed. Eam ut nulla singulis, pro ne minim eloquentiam, ea rebum menandri mediocritatem usu. In vel inani partem accumsan, ex cum velit dolorum nominavi. Ne senserit efficiantur instructior eam.
 
-            .full-height {
-                height: 100vh;
-            }
+Mentitum percipitur adversarium usu ne, vel mucius gloriatur philosophia cu, vis epicuri senserit ei. Dicunt feugait patrioque eam id, no duo laudem voluptua, tation delectus qui ex. Per in viderer intellegat conclusionemque. Ut sea stet omittam. Te mundi possit tacimates duo. Sea ne velit meliore prodesset, nam ad autem errem, ad vel erat putent tincidunt.
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+			</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="container col-md-12">
+		<div class="heading">
+			<h2>Heading 2</h2>
+		</div>
+		<hr>
+		<div class="paragraph ">
+			<p>
+				Cu velit bonorum verterem nam, vel ea nominavi antiopam democritum. Ne pro dolor aliquip adipiscing, dicat salutandi inciderint in ius. Vim dicant vocent aliquip ex, et nulla instructior sea, te eripuit alterum sapientem eam. Dicunt dolores intellegat nec et, et quas neglegentur voluptatibus est.
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+Partem impetus omittam ad vis. Eos et altera mediocrem, consul necessitatibus sed an. Munere percipit ad duo, nam at option convenire, per ut esse volutpat. Eos et ancillae voluptua temporibus, an solet docendi gubergren mei. Cum wisi putent explicari ea.
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+Est iisque concludaturque et, lorem postea partiendo ne mei, eos mutat meliore vituperatoribus cu. Has habeo ancillae insolens et, ex putant scripta admodum mel. Eu virtute mentitum probatus vel, omnis sonet dissentias vim cu. Eum ea esse percipit. Sed decore corrumpit ex. Nostro aliquam eam eu, sed ex dico malis graecis, in error vocent vim.
+			</p>
+		</div>
+	</div>
+</div>
+</div>
+@endsection

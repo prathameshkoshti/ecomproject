@@ -11,8 +11,19 @@
 |
 */
 
+Route::get('/home', function () {
+    return view('welcome');
+});
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/about', function(){
+	return view('about');
+});
+
+Route::get('/contact_us', function(){
+	return view('contact');
 });
 
 Auth::routes();
@@ -20,7 +31,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function(){
 	Route::group(array('prefix' => 'admin'),function(){
 
-		Route::get('/', 'HomeController@index')->name('home');
+		Route::get('/', 'HomeController@index')->name('layouts.home');
 
 		Route::group(array('prefix' => 'registrations'),function(){
 			Route::get('/', 'RegistrationsController@index');
@@ -36,5 +47,6 @@ Route::group(['middleware' => 'auth'], function(){
 		});
 	});
 });
+
 
 

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Book a Hall',
+    'title' => 'Laravel',
 
     'title_prefix' => '',
 

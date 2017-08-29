@@ -9,11 +9,11 @@ class RegistrationsController extends Controller
 {
     public function index(){
     	$data = Registration :: where('status', 1)->paginate(4);
-    	return view('registration', compact('data'));
+    	return view('admin.registration', compact('data'));
     }
 
     public function create(){
-    	return view('create');
+    	return view('admin.create');
     }
 
     public function store(Request $request){
@@ -45,7 +45,7 @@ class RegistrationsController extends Controller
 
     public function edit( $id ){
     	$data = Registration :: find( $id );
-    	return view('edit', compact('data'));
+    	return view('admin.edit', compact('data'));
     }
 
     public function update( $id, Request $request){

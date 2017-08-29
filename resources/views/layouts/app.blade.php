@@ -8,14 +8,19 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Hall Boking System</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <style type="text/css">
+        .nav{
+            color: white !important;
+        }
+    </style>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -29,9 +34,32 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Hall Booking System
                     </a>
+                    <div class="nav navbar-nav">
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="/home">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+                </div>
+                
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
@@ -44,7 +72,6 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -53,6 +80,9 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="/admin">
+                                            Admin Panel
+                                        </a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
