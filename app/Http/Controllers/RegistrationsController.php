@@ -8,7 +8,7 @@ use App\Registration;
 class RegistrationsController extends Controller
 {
     public function index(){
-    	$data = Registration :: where('status', 1)->paginate(4);
+    	$data = Registration :: where('status', 1)->paginate(5);
     	return view('admin.registration', compact('data'));
     }
 

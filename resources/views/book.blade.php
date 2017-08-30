@@ -1,14 +1,34 @@
+<style type="text/css">
+	.table-borderless td{
+		border : 0 !important;
+	}
+	.btn-primary{
+		background-color: #212121 !important;
+		border-color: #212121 !important;
+	}
+	.form-group{
+		background-color: #eeeeee;
+		border-radius: 3px;
+	}
+</style>
+@extends('layouts.app')
 
-<div class="form-group">
+@section('content')
+<?php
+    $times = ['9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'];
+?>
+<div class="row" style="padding: 5%">
+<div class="form-group col-md-6 col-md-offset-3" style="margin-right: 20%">
+	<h2 class="col-md-offset-4" style="padding-bottom: 10%;">Book the Hall</h2>
 	<form  method="post" action="/admin/registrations/store" class="form form-group box-body">
 		{{csrf_field()}}
 		{{method_field('PUT')}}
-		<table class="table">
+		<table class="table table-borderless">
 			<tr>
-				<td>
+				<td class="col-md-3">
 					<span class="">Name</span>
 				</td>
-				<td>
+				<td class="col-md-3">
 					<input class="form-control" type="text" name="name" class="" required>
 				</td>
 			</tr>
@@ -33,7 +53,11 @@
 					<span class="">Check-In</span>
 				</td>
 				<td>
-					<input class="form-control" type="text" name="check_in" class="" required>
+					<select class="form-control" id="sel1" name="check_in" required>
+					    @foreach( $times as $time)
+					    <option>{{$time}}</option>
+					    @endforeach
+					</select>
 				</td>
 			</tr>
 			<tr>
@@ -41,7 +65,11 @@
 					<span class="">Check-Out</span>
 				</td>
 				<td>
-					<input class="form-control" type="text" name="check_out" class="" required>
+					<select class="form-control" id="sel1" name="check_out" required>
+					    @foreach( $times as $time)
+					    <option>{{$time}}</option>
+					    @endforeach
+					</select>
 				</td>
 			</tr>
 			<tr>
@@ -79,3 +107,5 @@
 		</table>
 	</form>
 </div>
+</div>
+@endsection

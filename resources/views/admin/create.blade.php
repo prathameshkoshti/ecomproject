@@ -18,10 +18,13 @@
 	}
 </style>
 @section('content_header')
-    <h1 class="flex-box">Add new record</h1>
+    <h1 class="flex-box">Add a new record</h1>
 @stop
 
 @section('content')
+<?php
+    $times = ['9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'];
+?>
 <div class="form-group">
 	<form  method="post" action="/admin/registrations/store" class="form form-group box-body">
 		{{csrf_field()}}
@@ -56,7 +59,11 @@
 					<span class="">Check-In</span>
 				</td>
 				<td>
-					<input class="form-control" type="text" name="check_in" class="" required>
+					<select class="form-control" id="sel1" name="check_in" required>
+					    @foreach( $times as $time)
+					    <option>{{$time}}</option>
+					    @endforeach
+					</select>
 				</td>
 			</tr>
 			<tr>
@@ -64,7 +71,11 @@
 					<span class="">Check-Out</span>
 				</td>
 				<td>
-					<input class="form-control" type="text" name="check_out" class="" required>
+					<select class="form-control" id="sel1" name="check_out" required>
+					    @foreach( $times as $time)
+					    <option>{{$time}}</option>
+					    @endforeach
+					</select>
 				</td>
 			</tr>
 			<tr>

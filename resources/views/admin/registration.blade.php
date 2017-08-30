@@ -18,6 +18,7 @@
         float: left;
         position: absolute;
         right: 10%;
+        top: 12%;
     }
     .flash{
         float: left;
@@ -36,8 +37,7 @@
 
 <div class="fluid-container">
     <div style="display: flex">    
-    <a style="margin: 10px" class="btn btn-success add-new" href ="/admin/registrations/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add
-    </a>
+    <a style="margin: 10px" class="btn btn-success add-new" href ="/admin/registrations/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
     </div> 
     <div class="box"> 
         <table class="table table-hover text-center">
@@ -65,7 +65,6 @@
             		<td><a class="btn btn-warning" href="/admin/registrations/edit/{{$value->id}}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></td><td><a class="btn btn-danger" href="/admin/registrations/delete/{{$value->id}}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></td>
             	</tr>
         	@endforeach
-            @if(count($data)>4)
             <tr>
                 <td colspan="10">
                     <div class="pagination">
@@ -73,7 +72,6 @@
                     </div>
                 </td>
             </tr>
-            @endif
         </table>
     </div>
 </div>

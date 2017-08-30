@@ -15,8 +15,17 @@
 </head>
 <body>
     <style type="text/css">
-        .nav{
-            color: white !important;
+        body{
+            background-color: #424242 !important;
+        }
+        .navbar-nav > li > .dropdown-menu { 
+            background-color: #212121; 
+        }
+        .navbar-nav > li > .dropdown-menu a{
+            color: #fff;
+        }
+        .navbar-nav > li > .dropdown-menu a:hover{
+            color: #212121;
         }
     </style>
     <div id="app">
@@ -37,21 +46,25 @@
                         Hall Booking System
                     </a>
                     <div class="nav navbar-nav">
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                    
                     <ul class="nav navbar-nav navbar-left">
-                        <li>
+
+                        <li class="{{ Request::is('home') ? 'active' : '' }} {{ Request::is('/') ? 'active' : '' }}" >
                             <a href="/home">
                                 Home
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('book') ? 'active' : '' }}">
+                            <a href="/book">
+                                Book the Hall
+                            </a>
+                        </li>
+                        <li class="{{ Request::is('about') ? 'active' : '' }}">
                             <a href="/about">
                                 About Us
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ Request::is('contact') ? 'active' : '' }}">
                             <a href="/contact">
                                 Contact Us
                             </a>
@@ -68,7 +81,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right navbar-inverse">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -103,7 +116,11 @@
 
         @yield('content')
     </div>
-
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">All Rights Reserved.</p>
+      </div>
+    </footer>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

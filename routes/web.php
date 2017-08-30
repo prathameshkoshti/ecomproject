@@ -22,8 +22,12 @@ Route::get('/about', function(){
 	return view('about');
 });
 
-Route::get('/contact_us', function(){
+Route::get('/contact', function(){
 	return view('contact');
+});
+
+Route::get('/book', function(){
+	return view('book');
 });
 
 Auth::routes();

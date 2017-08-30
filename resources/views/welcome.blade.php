@@ -2,13 +2,52 @@
 	body{
 		background-color: #424242 !important;
 	}
+	hr{
+		border-top: 1px solid #9E9E9E !important;
+		color: #9E9E9E !important;
+	}
+	.carousel-indicators .active{
+		background-color: #424242 !important;
+		color: #424242 !important;
+	}
+	.container{
+		border-radius: 3px !important;
+	}
 </style>
 @extends('layouts.app')
 
 @section('content')
 
+<div class="carousel slide" id="myCarousel">
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
 
-<div class="col-md-6 col-md-offset-3" style="background-color: #F5F5F5">
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="{{URL::asset('/images/main-banner.jpg')}}" alt="Image 1" class="img-responsive">
+		</div>
+		<div class="item">
+			<img src="{{URL::asset('/images/image2.jpg')}}" alt="Image 2" class="img-responsive">
+		</div>
+		<div class="item">
+			<img src="{{URL::asset('/images/image3.jpg')}}" alt="Image 3" class="img-responsive">
+		</div>
+	</div>
+
+	<div>
+		<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+			<span class="icon-prev"></span>
+		</a>
+		<a class="carousel-control right" href="#myCarousel" data-slide="next">
+			<span class="icon-next"></span>
+		</a>
+	</div>
+</div>
+<div class="row" style="padding: 5%;">
+<div class="container col-md-8 col-md-offset-2" style="background-color: #EEEEEE">
 <div class="container-fluid">
 	<div class="container col-md-12">
 		<div class="heading">
@@ -42,6 +81,7 @@ Est iisque concludaturque et, lorem postea partiendo ne mei, eos mutat meliore v
 			</p>
 		</div>
 	</div>
+</div>
 </div>
 </div>
 @endsection
