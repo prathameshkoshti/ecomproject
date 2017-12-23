@@ -17,7 +17,9 @@ class RegistrationsController extends Controller
     }
 
     public function store(Request $request){
-        
+        $date=request('date');
+        $data = Registration :: where('date', $date);
+        dd($data);
     	$this -> validate($request, [
             'name' => 'required',
             'date' => 'required',
@@ -28,20 +30,33 @@ class RegistrationsController extends Controller
             'email' =>'required',
             'address' => 'required',
         ]);
-
-    	Registration::Create([
-    		'name' => request('name'),
-    		'date' => request('date'),
-    		'occassion' => request('occassion'),
-    		'check_in' => request('check_in'),
-    		'check_out' => request('check_out'),
-    		'phone_no' => request('phone'),
-    		'email' => request('email'),
-    		'address' => request('address'),
-    	]);
-    	\Session::flash('create', 'Data Stored Successfully!');
-    	return redirect('/admin/registrations');
+        
+        if($data->date === request('date')){
+            return dd('Error');
+        }
+        else{
+        	Registration::Create([
+        		'name' => request('name'),
+        		'date' => request('date'),
+        		'occassion' => request('occassion'),
+        		'check_in' => request('check_in'),
+        		'check_out' => request('check_out'),
+        		'phone_no' => request('phone'),
+        		'email' => request('email'),
+        		'address' => request('address'),
+        	]);
+        	
+            if(\Auth::check() && \Auth::user()->name === 'Admin'){
+                \Session::flash('create', 'Data Stored Successfully!');
+            	return redirect('/admin/registrations');
+            }
+            else{
+                \Session::put('create','Data Stored Successfully!');
+                return redirect('/home')->with('status', 'Data Stored Successfully!');
+            }
+        }
     }
+
 
     public function edit( $id ){
     	$data = Registration :: find( $id );

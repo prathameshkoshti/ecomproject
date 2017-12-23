@@ -20,7 +20,7 @@
 <div class="row" style="padding: 5%">
 <div class="form-group col-md-6 col-md-offset-3" style="margin-right: 20%">
 	<h2 class="col-md-offset-4" style="padding-bottom: 10%;">Book the Hall</h2>
-	<form  method="post" action="/admin/registrations/store" class="form form-group box-body">
+	<form  method="post" action="/store" class="form form-group box-body">
 		{{csrf_field()}}
 		{{method_field('PUT')}}
 		<table class="table table-borderless">
@@ -101,7 +101,7 @@
 				</td>
 				<td style="align-items: right">
 					<input type="submit" class="btn-lg btn btn-primary" value="Create" name="submit">
-					<a class="btn btn-default btn-lg" href="/admin/registrations/">Cancel</a>
+					<a class="btn btn-default btn-lg" href="/home">Cancel</a>
 				</td>
 			</tr>
 		</table>

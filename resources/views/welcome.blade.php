@@ -84,4 +84,9 @@ Est iisque concludaturque et, lorem postea partiendo ne mei, eos mutat meliore v
 </div>
 </div>
 </div>
+@if(session('status'))
+	<script type="text/javascript">
+		alert('Registrations done successfully.')
+	</script>
+@endif
 @endsection

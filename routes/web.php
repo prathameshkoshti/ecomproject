@@ -30,6 +30,8 @@ Route::get('/book', function(){
 	return view('book');
 });
 
+Route::put('/store', 'RegistrationsController@store');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
